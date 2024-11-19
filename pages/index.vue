@@ -448,6 +448,7 @@ const openSourceProjects = [
 ];
 
 
+
 const designProcess = [
   {
     title: "Requirement Gathering",
@@ -520,6 +521,7 @@ const submitForm = () => {
   form.value = { name: "", email: "", message: "" };
   alert("Thank you for your message! I will get back to you soon.");
 };
+
 </script>
 
 <style scoped>
