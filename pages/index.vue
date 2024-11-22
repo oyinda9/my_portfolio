@@ -40,11 +40,11 @@
         <p
           class="text-xl md:text-2xl mb-8 animate-fade-in-up animation-delay-300"
         >
-          Frontend Developer & UI/UX Designer
+          Software-Developer (Frontend developer)
         </p>
         <div class="flex justify-center space-x-4">
           <a
-            href="#about"
+            href="#projects"
             class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 animate-fade-in-up animation-delay-600"
           >
             Explore My Work
@@ -134,7 +134,7 @@
         <!-- Frontend Development Projects -->
         <div class="mb-16">
           <h3 class="text-2xl font-semibold mb-8">Frontend Development</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div
               v-for="project in frontendProjects"
               :key="project.title"
@@ -143,7 +143,7 @@
               <img
                 :src="project.image"
                 :alt="project.title"
-                class="w-full h-64 object-cover"
+                class="w-full h-100%pn object-cover"
               />
               <div class="p-6">
                 <h4 class="text-xl font-bold mb-2">{{ project.title }}</h4>
@@ -169,60 +169,43 @@
           </div>
         </div>
 
-        <!-- UI/UX Design Projects -->
-        <!-- <div class="mb-16">
-            <h3 class="text-2xl font-semibold mb-8">UI/UX Design</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div v-for="project in uiuxProjects" :key="project.title" class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
-                <img :src="project.image" :alt="project.title" class="w-full h-64 object-cover" />
-                <div class="p-6">
-                  <h4 class="text-xl font-bold mb-2">{{ project.title }}</h4>
-                  <p class="text-gray-400 mb-4">{{ project.description }}</p>
-                  <div class="flex flex-wrap gap-2 mb-4">
-                    <span v-for="tool in project.tools" :key="tool" class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm">
-                      {{ tool }}
-                    </span>
-                  </div>
-                  <a :href="project.link" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300">View Design</a>
-                </div>
-              </div>
-            </div>
-          </div>
-           -->
-        <!-- Writing Projects -->
-        <!-- <div class="mb-16">
-            <h3 class="text-2xl font-semibold mb-8">Writing Projects</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div v-for="project in writingProjects" :key="project.title" class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
-                <div class="p-6">
-                  <h4 class="text-xl font-bold mb-2">{{ project.title }}</h4>
-                  <p class="text-gray-400 mb-4">{{ project.description }}</p>
-                  <a :href="project.link" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300">Read Article</a>
-                </div>
-              </div>
-            </div>
-          </div> -->
 
         <!-- Open Source Contributions -->
         <div>
-          <h3 class="text-2xl font-semibold mb-8">Open Source Contributions</h3>
+          <h3 class="text-2xl font-semibold mb-8">Self-initiated projects </h3>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div
-              v-for="project in openSourceProjects"
+              v-for="project in personalProject"
               :key="project.title"
               class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105"
             >
+            <img
+                :src="project.image"
+                :alt="project.title"
+                class="w-full h-100%pn object-cover"
+              />
               <div class="p-6">
                 <h4 class="text-xl font-bold mb-2">{{ project.title }}</h4>
                 <p class="text-gray-400 mb-4">{{ project.description }}</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    v-for="tech in project.technologies"
+                    :key="tech"
+                    class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm"
+                  >
+                    {{ tech }}
+                  </span>
+                </div>
                 <a
                   :href="project.link"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="text-purple-400 hover:text-purple-300"
-                  >View Contribution</a
+                  >View Project</a
                 >
               </div>
+              
+            
             </div>
           </div>
         </div>
@@ -308,7 +291,11 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 py-8">
-      <div class="container mx-auto px-6 text-center">
+       
+      <div class="absolute container mx-auto px-6 text-center">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        
         <p>&copy; 2024 Sholanke precious. All rights reserved.</p>
         <div class="flex justify-center space-x-4 mt-4">
           <a
@@ -329,6 +316,13 @@
 
 <script setup>
 import { ref } from "vue";
+import nigs from "/Users/shola/my-portfolio/public//images/nigsims.png";
+import medadhere from "/Users/shola/my-portfolio/public/images/dashetsM.png";
+import shuttle from "/Users/shola/my-portfolio/public/images/shuttle.png";
+import enfedam_react from "/Users/shola/my-portfolio/public/images/enfedam.png";
+import enfedam_wordpress from "/Users/shola/my-portfolio/public/images/enfedam(1).png";
+import hbs from "/Users/shola/my-portfolio/public/images/hs2.png";
+
 import {
   GithubIcon,
   LinkedinIcon,
@@ -338,6 +332,7 @@ import {
   PenToolIcon,
   LayoutIcon,
   SmileIcon,
+  Image,
 } from "lucide-vue-next";
 
 const navItems = [
@@ -365,85 +360,64 @@ const skills = [
   { name: "Vue", icon: "Vue", level: 75 },
   { name: "Nuxt.js", icon: "Nuxt.js", level: 80 },
   { name: "Webpack", icon: "webpack", level: 70 },
+  { name: "Wordpress", icon: "wordpress", level: 70 },
 ];
 
 const frontendProjects = [
   {
-    title: "E-commerce Platform",
+    title: " NIGSIMS (Agro-system E-commerce Platform)",
     description:
-      "A fully functional e-commerce website with product listings, cart, and checkout process.",
-    image: "",
-    link: "#",
+      "The NIGSIMS platform  is an innovative agricultural marketplace designed to transform Nigeria's agricultural landscape. Its primary focus is on fostering wealth creation and job opportunities for participants while enhancing the efficiency and accessibility of the agricultural seed supply chain. ",
+      image: nigs, // Correct path
+    link: "https://nigsims.ng/",
     technologies: ["Vue.js", "Vuex", "Node.js", "MongoDB"],
   },
   {
-    title: "Task Management App",
+    title: "MEDADHER",
     description:
-      "A Trello-like application for managing tasks and projects with drag-and-drop functionality.",
-    image: "",
-    link: "#",
-    technologies: ["React", "Redux", "Firebase"],
+      "MedAdher is an adherence system designed to make managing treatment plans seamless for patients and caregivers. By leveraging cutting-edge Digital Adherence Technology (DAT), MedAdher provides an adaptive and affordable solution tailored to the needs of disease management programs.",
+    image: medadhere,
+    link: "https://medadher.com/",
+    technologies: ["Vue.js", "Nuxt.js", "Chart.js"],
   },
+
+  {
+    title: "SHUTTLE",
+    description:
+      "Shuttle is an internal booking system designed to simplify staff movement and eliminate confusion or conflicts related to transportation. By providing a seamless and organized way to manage bookings, Shuttle ensures efficiency and clarity for both staff and administrators.",
+    image: shuttle,
+    link: " #",
+    technologies: ["Vue.js", "Nuxt.js", "Material-icon", "Postman","Tailwind css"],
+  },
+
+  
 ];
 
-const uiuxProjects = [
-  {
-    title: "Finance App Redesign",
+const personalProject = [
+{
+    title: "ENFEDAM ACADEMY WEBSITE",
     description:
-      "A complete redesign of a finance management application, focusing on improved user experience and accessibility.",
-    image: "",
-    link: "#",
-    tools: ["Figma", "Sketch", "Adobe XD"],
+      "A simple , sleek and intuitive school landing page website designed to captivate visitors and provide essential information at a glance. This user-friendly platform serves as the perfect gateway to showcase the school’s values, programs, and achievements.",
+    image: enfedam_react,
+    link: " #",
+    technologies: ["React",  "Material-icon", "Tailwind css"],
   },
-  {
-    title: "Travel Planner UI",
-    description:
-      "A sleek and intuitive user interface for a travel planning application, designed with a focus on user engagement.",
-    image: "",
-    link: "#",
-    tools: ["Adobe XD", "Illustrator", "InVision"],
-  },
-];
 
-const writingProjects = [
   {
-    title: "The Future of Web Development",
+    title: "Enfedam Academy Website: An Advanced WordPress Redesign",
     description:
-      "An in-depth article exploring emerging trends and technologies in web development.",
-    link: "#",
+      "An advanced version of the Enfedam Academy website using WordPress, transforming it into a comprehensive school management system. The redesigned platform integrates dashboards for parents, students, and staff, making it a central hub for school activities and communication.",
+    image: enfedam_wordpress,
+    link: " http://just-test.local/",
+    technologies: ["Wordpress" ,"Elementor"],
   },
-  {
-    title: "Optimizing React Performance",
-    description:
-      "A comprehensive guide on improving the performance of React applications.",
-    link: "#",
-  },
-  {
-    title: "Accessibility in Modern Web Design",
-    description:
-      "Exploring the importance of accessibility in web design and how to implement it effectively.",
-    link: "#",
-  },
-];
 
-const openSourceProjects = [
   {
-    title: "Vue.js Core",
-    description:
-      "Contributed to the core Vue.js library, implementing new features and fixing bugs.",
-    link: "https://github.com/vuejs/vue",
-  },
-  {
-    title: "React Testing Library",
-    description:
-      "Added new utilities to improve the testing experience for React developers.",
-    link: "https://github.com/testing-library/react-testing-library",
-  },
-  {
-    title: "Tailwind CSS",
-    description:
-      "Contributed to the documentation and created new utility classes.",
-    link: "https://github.com/tailwindlabs/tailwindcss",
+    title: "HOTEL RESERVATION SYSTEM",
+    description:"This is a simple hotel reservation system that allows users to easily book rooms through an intuitive and interactive interface. ",
+    image: hbs,
+    link: " #",
+    technologies: ["Html" ,"CSS", "Javasript"],
   },
 ];
 
