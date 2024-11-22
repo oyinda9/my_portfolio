@@ -6,7 +6,7 @@
     >
       <div class="container mx-auto px-6 py-3">
         <div class="flex items-center justify-between">
-          <div class="text-2xl font-bold">Sholanke Precious</div>
+          <div class="text-2xl font-bold">Sholanke Precious Oyindamola</div>
           <div class="hidden md:flex space-x-4">
             <a
               v-for="item in navItems"
@@ -50,7 +50,7 @@
             Explore My Work
           </a>
           <a
-            href="/path-to-your-cv.pdf"
+            href="https://docs.google.com/document/d/1IjHlis__levZqccYZuuHxd_Ym6M7Iri8VM-VE2FKEXk/edit?usp=sharing"
             download
             class="bg-transparent border-2 border-white hover:bg-white hover:text-purple-800 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 animate-fade-in-up animation-delay-600"
           >
@@ -292,9 +292,7 @@
     <!-- Footer -->
     <footer class="bg-gray-900 py-8">
        
-      <div class="absolute container mx-auto px-6 text-center">
-        <div class="stars"></div>
-        <div class="twinkling"></div>
+      <div class=" container mx-auto px-6 text-center">
         
         <p>&copy; 2024 Sholanke precious. All rights reserved.</p>
         <div class="flex justify-center space-x-4 mt-4">
@@ -322,19 +320,8 @@ import shuttle from "/public/images/shuttle.png";
 import enfedam_react from "/public/images/enfedam.png";
 import enfedam_wordpress from "/public/images/enfedam(1).png";
 import hbs from "/public/images/hs2.png";
-
-import {
-  GithubIcon,
-  LinkedinIcon,
-  TwitterIcon,
-  CodeIcon,
-  PaletteIcon,
-  PenToolIcon,
-  LayoutIcon,
-  SmileIcon,
-  Image,
-} from "lucide-vue-next";
-
+import { Linkedin } from 'lucide-vue-next';
+import { Github } from 'lucide-vue-next';
 const navItems = [
   "Home",
   "About",
@@ -361,6 +348,7 @@ const skills = [
   { name: "Nuxt.js", icon: "Nuxt.js", level: 80 },
   { name: "Webpack", icon: "webpack", level: 70 },
   { name: "Wordpress", icon: "wordpress", level: 70 },
+  { name: "Vercel", icon: "Vercel", level: 70 },
 ];
 
 const frontendProjects = [
@@ -477,9 +465,9 @@ const designProcess = [
 ];
 
 const socialLinks = [
-  { name: "GitHub", icon: GithubIcon, url: "https://github.com" },
-  { name: "LinkedIn", icon: LinkedinIcon, url: "https://linkedin.com" },
-  { name: "Twitter", icon: TwitterIcon, url: "https://twitter.com" },
+  { name: "GitHub", icon: Github, url: "https://github.com/oyinda9" },
+  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/precious-sholanke-5a6113232" },
+  // { name: "Twitter", icon: TwitterIcon, url: "https://twitter.com" },
 ];
 
 const form = ref({
