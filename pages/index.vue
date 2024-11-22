@@ -134,6 +134,8 @@
         <!-- Frontend Development Projects -->
         <div class="mb-16">
           <h3 class="text-2xl font-semibold mb-8">Frontend Development</h3>
+
+          <h3 class="text-2xl font-semibold mb-8">Cooperate projects</h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div
               v-for="project in frontendProjects"
