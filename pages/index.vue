@@ -70,7 +70,7 @@
           <div class="md:w-1/2 mb-8 md:mb-0">
             <img
               src="/assets/WhatsApp Image 2024-10-26 at 09.14.48_760ac7e3.jpg"
-              alt="Jane Doe"
+              alt="sholanke precious"
               class="rounded-full w-[500px] h-[500px] object-contain mx-auto"
             />
           </div>
@@ -316,7 +316,7 @@
 
 <script setup>
 import { ref } from "vue";
-import nigs from "/Users/shola/my-portfolio/public//images/nigsims.png";
+import nigs from "/Users/shola/my-portfolio/public/images/nigsims.png";
 import medadhere from "/Users/shola/my-portfolio/public/images/dashetsM.png";
 import shuttle from "/Users/shola/my-portfolio/public/images/shuttle.png";
 import enfedam_react from "/Users/shola/my-portfolio/public/images/enfedam.png";
