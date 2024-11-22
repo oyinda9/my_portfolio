@@ -316,12 +316,12 @@
 
 <script setup>
 import { ref } from "vue";
-import nigs from "/Users/shola/my-portfolio/public/images/nigsims.png";
-import medadhere from "/Users/shola/my-portfolio/public/images/dashetsM.png";
-import shuttle from "/Users/shola/my-portfolio/public/images/shuttle.png";
-import enfedam_react from "/Users/shola/my-portfolio/public/images/enfedam.png";
-import enfedam_wordpress from "/Users/shola/my-portfolio/public/images/enfedam(1).png";
-import hbs from "/Users/shola/my-portfolio/public/images/hs2.png";
+import nigs from "/public/images/nigsims.png";
+import medadhere from "/public/images/dashetsM.png";
+import shuttle from "/public/images/shuttle.png";
+import enfedam_react from "/public/images/enfedam.png";
+import enfedam_wordpress from "/public/images/enfedam(1).png";
+import hbs from "/public/images/hs2.png";
 
 import {
   GithubIcon,
