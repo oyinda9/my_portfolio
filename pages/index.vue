@@ -174,43 +174,54 @@
 
         <!-- Open Source Contributions -->
         <div>
-          <h3 class="text-2xl font-semibold mb-8">Self-initiated projects </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div
-              v-for="project in personalProject"
-              :key="project.title"
-              class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105"
-            >
-            <img
-                :src="project.image"
-                :alt="project.title"
-                class="w-full h-100%pn object-cover"
-              />
-              <div class="p-6">
-                <h4 class="text-xl font-bold mb-2">{{ project.title }}</h4>
-                <p class="text-gray-400 mb-4">{{ project.description }}</p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span
-                    v-for="tech in project.technologies"
-                    :key="tech"
-                    class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm"
-                  >
-                    {{ tech }}
-                  </span>
-                </div>
-                <a
-                  :href="project.link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-purple-400 hover:text-purple-300"
-                  >View Project</a
-                >
-              </div>
-              
-            
-            </div>
-          </div>
+  <h3 class="text-2xl font-semibold mb-8">Self-initiated projects</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      v-for="project in personalProject"
+      :key="project.title"
+      class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105"
+    >
+      <!-- Conditionally render image or video -->
+      <div v-if="project.type === 'video'">
+        <video
+          :src="project.media"
+          controls
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div v-else>
+        <img
+          :src="project.media"
+          :alt="project.title"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div class="p-6">
+        <h4 class="text-xl font-bold mb-2">{{ project.title }}</h4>
+        <p class="text-gray-400 mb-4">{{ project.description }}</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span
+            v-for="tech in project.technologies"
+            :key="tech"
+            class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm"
+          >
+            {{ tech }}
+          </span>
         </div>
+        <a
+          :href="project.link"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-purple-400 hover:text-purple-300"
+        >
+          View Project
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
     </section>
 
@@ -322,6 +333,10 @@ import shuttle from "/public/images/shuttle.png";
 import enfedam_react from "/public/images/enfedam.png";
 import enfedam_wordpress from "/public/images/enfedam(1).png";
 import hbs from "/public/images/hs2.png";
+import client_dashboard from "/public/images/client_dashboard.png";
+import client from "/public/images/dashboard.png";
+import pcosVideo from "/public/images/pcos-video.mp4";
+import interra from "/public/images/interra.png"
 import { Linkedin } from 'lucide-vue-next';
 import { Github } from 'lucide-vue-next';
 const navItems = [
@@ -341,13 +356,14 @@ const skills = [
   { name: "Bootstrap", icon: "bootstrap", level: 85 },
   { name: "Responsive Design", icon: "layout", level: 95 },
   { name: "Node.js", icon: "nodejs", level: 80 },
-  { name: "Python", icon: "python", level: 75 },
+  { name: "Python", icon: "python", level: 30 },
   { name: "GitHub", icon: "github", level: 85 },
   { name: "MySQL", icon: "mysql", level: 75 },
   { name: "MongoDB", icon: "mongodb", level: 65 },
   { name: "HandleBars", icon: "HandleBars", level: 45 },
   { name: "Vue", icon: "Vue", level: 75 },
   { name: "Nuxt.js", icon: "Nuxt.js", level: 80 },
+  { name: "Next.js", icon: "Nuxt.js", level: 80 },
   { name: "Webpack", icon: "webpack", level: 70 },
   { name: "Wordpress", icon: "wordpress", level: 70 },
   { name: "Vercel", icon: "Vercel", level: 70 },
@@ -379,35 +395,67 @@ const frontendProjects = [
     link: " #",
     technologies: ["Vue.js", "Nuxt.js", "Material-icon", "Postman","Tailwind css"],
   },
+  {
+  title: "INTERRA NETWORKS",
+  description:
+    "Interra Networks is a technology solutions and software provider, delivering innovative and cutting-edge services to enhance business operations. Specializing in software development, IT solutions, and digital transformation, Interra Networks empowers organizations to achieve their goals with tailored and efficient tools.",
+  image: interra,
+  link: " #",
+  technologies: ["Vue.js", "Nuxt.js", "Material-icon", "Tailwind css"],
+},
 
   
 ];
 
 const personalProject = [
-{
+  {
     title: "ENFEDAM ACADEMY WEBSITE",
     description:
-      "A simple , sleek and intuitive school landing page website designed to captivate visitors and provide essential information at a glance. This user-friendly platform serves as the perfect gateway to showcase the school’s values, programs, and achievements.",
-    image: enfedam_react,
+      "A simple, sleek, and intuitive school landing page website designed to captivate visitors and provide essential information at a glance. This user-friendly platform serves as the perfect gateway to showcase the school’s values, programs, and achievements.",
+    media: enfedam_react, // This is the media (image)
+    type: "image", // Specifies it's an image
     link: " #",
-    technologies: ["React",  "Material-icon", "Tailwind css"],
+    technologies: ["React", "Material-icon", "Tailwind css"],
   },
 
   {
     title: "Enfedam Academy Website: An Advanced WordPress Redesign",
     description:
       "An advanced version of the Enfedam Academy website using WordPress, transforming it into a comprehensive school management system. The redesigned platform integrates dashboards for parents, students, and staff, making it a central hub for school activities and communication.",
-    image: enfedam_wordpress,
-    link: " http://just-test.local/",
-    technologies: ["Wordpress" ,"Elementor"],
+    media: enfedam_wordpress, // This is the media (image)
+    type: "image", // Specifies it's an image
+    link: "http://just-test.local/",
+    technologies: ["Wordpress", "Elementor"],
   },
 
   {
     title: "HOTEL RESERVATION SYSTEM",
-    description:"This is a simple hotel reservation system that allows users to easily book rooms through an intuitive and interactive interface. ",
-    image: hbs,
+    description:
+      "This is a simple hotel reservation system that allows users to easily book rooms through an intuitive and interactive interface.",
+    media: hbs, // This is the media (image)
+    type: "image", // Specifies it's an image
     link: " #",
-    technologies: ["Html" ,"CSS", "Javasript"],
+    technologies: ["Html", "CSS", "Javasript"],
+  },
+
+  {
+    title: "CONTRACTLY",
+    description:
+      "Contractly is an innovative platform designed specifically for contractors and clients in the real estate industry. It streamlines the process of managing contracts, project details, and communication. Built with React, Next.js, and Tailwind CSS, Contractly provides a seamless and intuitive interface for contractors to submit bids and manage projects, while clients can easily review, approve, and track the progress of their contracts. Whether you're a contractor or a client, Contractly simplifies collaboration, ensuring transparency and efficiency in real estate projects.",
+    media: client_dashboard, // This is the media (image)
+    type: "image", // Specifies it's an image
+    link: "https://contractly-projects.vercel.app/",
+    technologies: ["React", "Next.js", "Tailwind", "Vercel"],
+  },
+
+  {
+    title: "PCOS-MANAGER",
+    description:
+      "PCOS (Polycystic Ovary Syndrome) is a common hormonal disorder that affects individuals with ovaries. It can cause irregular menstrual cycles, excessive androgen (male hormone) levels, and cysts on the ovaries. Symptoms may include acne, weight gain, hair thinning, and difficulty getting pregnant. A PCOS manager typically helps individuals with PCOS by providing personalized guidance on managing symptoms. This might involve creating a treatment plan that includes lifestyle changes, such as diet and exercise, medications to regulate hormones, and monitoring health indicators like blood sugar levels and weight. The manager can also offer emotional support and advice on managing the condition long-term.",
+    media: pcosVideo, // This is the media (video)
+    type: "video", // Specifies it's a video
+    link: "https://pcos-manager.vercel.app/",
+    technologies: ["Nuxt.js", "Vue.js", "Tailwind Css", "Vercel", "Json-Server"],
   },
 ];
 
