@@ -171,57 +171,55 @@
           </div>
         </div>
 
-
         <!-- Open Source Contributions -->
         <div>
-  <h3 class="text-2xl font-semibold mb-8">Self-initiated projects</h3>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <div
-      v-for="project in personalProject"
-      :key="project.title"
-      class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105"
-    >
-      <!-- Conditionally render image or video -->
-      <div v-if="project.type === 'video'">
-        <video
-          :src="project.media"
-          controls
-          class="w-full h-full object-cover"
-        />
-      </div>
-      <div v-else>
-        <img
-          :src="project.media"
-          :alt="project.title"
-          class="w-full h-full object-cover"
-        />
-      </div>
+          <h3 class="text-2xl font-semibold mb-8">Self-initiated projects</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+              v-for="project in personalProject"
+              :key="project.title"
+              class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105"
+            >
+              <!-- Conditionally render image or video -->
+              <div v-if="project.type === 'video'">
+                <video
+                  :src="project.media"
+                  controls
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div v-else>
+                <img
+                  :src="project.media"
+                  :alt="project.title"
+                  class="w-full h-full object-cover"
+                />
+              </div>
 
-      <div class="p-6">
-        <h4 class="text-xl font-bold mb-2">{{ project.title }}</h4>
-        <p class="text-gray-400 mb-4">{{ project.description }}</p>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span
-            v-for="tech in project.technologies"
-            :key="tech"
-            class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm"
-          >
-            {{ tech }}
-          </span>
+              <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">{{ project.title }}</h4>
+                <p class="text-gray-400 mb-4">{{ project.description }}</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    v-for="tech in project.technologies"
+                    :key="tech"
+                    class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm"
+                  >
+                    {{ tech }}
+                  </span>
+                </div>
+                <a
+                  :href="project.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-purple-400 hover:text-purple-300"
+                >
+                  View Project
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <a
-          :href="project.link"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-purple-400 hover:text-purple-300"
-        >
-          View Project
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
       </div>
     </section>
 
@@ -247,66 +245,68 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-900">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold mb-8 text-center font-poppins">
-          Get In Touch
-        </h2>
-        <div class="max-w-md mx-auto">
-          <form @submit.prevent="submitForm" class="space-y-4">
-            <div>
-              <label for="name" class="block text-sm font-medium mb-1"
-                >Name</label
-              >
-              <input
-                type="text"
-                id="name"
-                v-model="form.name"
-                required
-                class="w-full px-3 py-2 bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
-              />
-            </div>
-            <div>
-              <label for="email" class="block text-sm font-medium mb-1"
-                >Email</label
-              >
-              <input
-                type="email"
-                id="email"
-                v-model="form.email"
-                required
-                class="w-full px-3 py-2 bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
-              />
-            </div>
-            <div>
-              <label for="message" class="block text-sm font-medium mb-1"
-                >Message</label
-              >
-              <textarea
-                id="message"
-                v-model="form.message"
-                rows="4"
-                required
-                class="w-full px-3 py-2 bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
-            >
-              Send Message
-            </button>
-          </form>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-900">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-8 text-center text-white">Get In Touch</h2>
+    <div class="max-w-md mx-auto">
+      <form
+        action="https://formsubmit.co/sholankeprecious3@gmail.com"
+        method="POST"
+        class="space-y-4"
+      >
+        <div>
+          <label for="name" class="block text-sm font-medium mb-1 text-white">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full px-3 py-2 bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 text-white"
+          />
         </div>
-      </div>
-    </section>
+
+        <div>
+          <label for="email" class="block text-sm font-medium mb-1 text-white">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-3 py-2 bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 text-white"
+          />
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-medium mb-1 text-white">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            class="w-full px-3 py-2 bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 text-white"
+          ></textarea>
+        </div>
+
+        <!-- Hidden Fields for formsubmit.co -->
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="New Form Submission" />
+
+        <button
+          type="submit"
+          class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="bg-gray-900 py-8">
-       
-      <div class=" container mx-auto px-6 text-center">
-        
+      <div class="container mx-auto px-6 text-center">
         <p>&copy; 2024 Sholanke precious. All rights reserved.</p>
         <div class="flex justify-center space-x-4 mt-4">
           <a
@@ -336,9 +336,32 @@ import hbs from "/public/images/hs2.png";
 import client_dashboard from "/public/images/client_dashboard.png";
 import client from "/public/images/dashboard.png";
 import pcosVideo from "/public/images/pcos-video.mp4";
-import interra from "/public/images/interra.png"
-import { Linkedin } from 'lucide-vue-next';
-import { Github } from 'lucide-vue-next';
+import interra from "/public/images/interra.png";
+import { Linkedin } from "lucide-vue-next";
+import { Github } from "lucide-vue-next";
+import emailjs from "emailjs-com";
+
+const form = ref({
+  name: "",
+  email: "",
+  message: "",
+});
+
+
+
+// Handle form submission
+const handleSubmit = () => {
+  // Submit the form and set submission status
+ 
+
+  // Optionally reset form values after submission
+  form.value.name = '';
+  form.value.email = '';
+  form.value.message = '';
+};
+
+
+
 const navItems = [
   "Home",
   "About",
@@ -374,7 +397,7 @@ const frontendProjects = [
     title: " NIGSIMS (Agro-system E-commerce Platform)",
     description:
       "The NIGSIMS platform  is an innovative agricultural marketplace designed to transform Nigeria's agricultural landscape. Its primary focus is on fostering wealth creation and job opportunities for participants while enhancing the efficiency and accessibility of the agricultural seed supply chain. ",
-      image: nigs, // Correct path
+    image: nigs, // Correct path
     link: "https://nigsims.ng/",
     technologies: ["Vue.js", "Vuex", "Node.js", "MongoDB"],
   },
@@ -393,30 +416,25 @@ const frontendProjects = [
       "Shuttle is an internal booking system designed to simplify staff movement and eliminate confusion or conflicts related to transportation. By providing a seamless and organized way to manage bookings, Shuttle ensures efficiency and clarity for both staff and administrators.",
     image: shuttle,
     link: " #",
-    technologies: ["Vue.js", "Nuxt.js", "Material-icon", "Postman","Tailwind css"],
+    technologies: [
+      "Vue.js",
+      "Nuxt.js",
+      "Material-icon",
+      "Postman",
+      "Tailwind css",
+    ],
   },
   {
-  title: "INTERRA NETWORKS",
-  description:
-    "Interra Networks is a technology solutions and software provider, delivering innovative and cutting-edge services to enhance business operations. Specializing in software development, IT solutions, and digital transformation, Interra Networks empowers organizations to achieve their goals with tailored and efficient tools.",
-  image: interra,
-  link: " #",
-  technologies: ["Vue.js", "Nuxt.js", "Material-icon", "Tailwind css"],
-},
-
-  
+    title: "INTERRA NETWORKS",
+    description:
+      "Interra Networks is a technology solutions and software provider, delivering innovative and cutting-edge services to enhance business operations. Specializing in software development, IT solutions, and digital transformation, Interra Networks empowers organizations to achieve their goals with tailored and efficient tools.",
+    image: interra,
+    link: " #",
+    technologies: ["Vue.js", "Nuxt.js", "Material-icon", "Tailwind css"],
+  },
 ];
 
 const personalProject = [
-  {
-    title: "ENFEDAM ACADEMY WEBSITE",
-    description:
-      "A simple, sleek, and intuitive school landing page website designed to captivate visitors and provide essential information at a glance. This user-friendly platform serves as the perfect gateway to showcase the school’s values, programs, and achievements.",
-    media: enfedam_react, // This is the media (image)
-    type: "image", // Specifies it's an image
-    link: " #",
-    technologies: ["React", "Material-icon", "Tailwind css"],
-  },
 
   {
     title: "Enfedam Academy Website: An Advanced WordPress Redesign",
@@ -455,11 +473,15 @@ const personalProject = [
     media: pcosVideo, // This is the media (video)
     type: "video", // Specifies it's a video
     link: "https://pcos-manager.vercel.app/",
-    technologies: ["Nuxt.js", "Vue.js", "Tailwind Css", "Vercel", "Json-Server"],
+    technologies: [
+      "Nuxt.js",
+      "Vue.js",
+      "Tailwind Css",
+      "Vercel",
+      "Json-Server",
+    ],
   },
 ];
-
-
 
 const designProcess = [
   {
@@ -516,24 +538,16 @@ const designProcess = [
 
 const socialLinks = [
   { name: "GitHub", icon: Github, url: "https://github.com/oyinda9" },
-  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/precious-sholanke-5a6113232" },
+  {
+    name: "LinkedIn",
+    icon: Linkedin,
+    url: "https://www.linkedin.com/in/precious-sholanke-5a6113232",
+  },
   // { name: "Twitter", icon: TwitterIcon, url: "https://twitter.com" },
 ];
-
-const form = ref({
-  name: "",
-  email: "",
-  message: "",
-});
-
-const submitForm = () => {
-  // Here you would typically send the form data to a server
-  console.log("Form submitted:", form.value);
-  // Reset form after submission
-  form.value = { name: "", email: "", message: "" };
-  alert("Thank you for your message! I will get back to you soon.");
-};
-
+onMounted(() => {
+      handleSubmit(); 
+    });
 </script>
 
 <style scoped>

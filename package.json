@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-three/drei": "^9.117.2",
     "@react-three/fiber": "^8.17.10",
+    "emailjs-com": "^3.2.0",
     "lucide-vue-next": "^0.460.0",
     "nuxt": "^3.14.159",
     "particles.js": "^2.0.0",
