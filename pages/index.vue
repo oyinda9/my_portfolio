@@ -378,18 +378,24 @@ const skills = [
   { name: "Tailwind CSS", icon: "tailwindcss", level: 90 },
   { name: "Bootstrap", icon: "bootstrap", level: 85 },
   { name: "Responsive Design", icon: "layout", level: 95 },
-  { name: "Node.js", icon: "nodejs", level: 80 },
+  { name: "Node.js", icon: "nodejs", level: 85 },
+  { name: "Express.js", icon: "express", level: 80 },
   { name: "Python", icon: "python", level: 30 },
   { name: "GitHub", icon: "github", level: 85 },
   { name: "MySQL", icon: "mysql", level: 75 },
   { name: "MongoDB", icon: "mongodb", level: 65 },
-  { name: "HandleBars", icon: "HandleBars", level: 45 },
-  { name: "Vue", icon: "Vue", level: 75 },
-  { name: "Nuxt.js", icon: "Nuxt.js", level: 80 },
-  { name: "Next.js", icon: "Nuxt.js", level: 80 },
+  { name: "Handlebars", icon: "handlebars", level: 45 },
+  { name: "Vue", icon: "vue", level: 75 },
+  { name: "Nuxt.js", icon: "nuxtdotjs", level: 80 },
+  { name: "Next.js", icon: "nextdotjs", level: 80 },
   { name: "Webpack", icon: "webpack", level: 70 },
-  { name: "Wordpress", icon: "wordpress", level: 70 },
-  { name: "Vercel", icon: "Vercel", level: 70 },
+  { name: "WordPress", icon: "wordpress", level: 70 },
+  { name: "Vercel", icon: "vercel", level: 70 },
+  { name: "Render", icon: "render", level: 70 },
+  { name: "V0", icon: "v0", level: 90 },
+  { name: "Bolt.new", icon: "bolt", level: 70 },
+  { name: "Postman", icon: "postman", level: 80 },
+  { name: "Prisma", icon: "prisma", level: 75 },
 ];
 
 const frontendProjects = [
@@ -437,13 +443,13 @@ const frontendProjects = [
 const personalProject = [
 
   {
-    title: "Enfedam Academy Website: An Advanced WordPress Redesign",
-    description:
-      "An advanced version of the Enfedam Academy website using WordPress, transforming it into a comprehensive school management system. The redesigned platform integrates dashboards for parents, students, and staff, making it a central hub for school activities and communication.",
+    title: "Enfedam Academy Website: A Modern React & Next.js Platform",
+  description:
+    "A modernized version of the Enfedam Academy website built with React.js and Next.js, transforming it into a comprehensive school management system. The platform integrates dashboards for parents, students, and staff, making it a central hub for school activities and communication.",
     media: enfedam_wordpress, // This is the media (image)
     type: "image", // Specifies it's an image
-    link: "http://just-test.local/",
-    technologies: ["Wordpress", "Elementor"],
+    link: "https://enfedamacademy.onrender.com/",
+    technologies: ["React.js", "Next.js", "TailwindCss","DaisyUI" ,"Render"],
   },
 
   {
